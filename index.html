@@ -13,17 +13,32 @@
   <body>
     <div class='input'>
       <h1>New Zealand COVID Protection Framework Rules</h1>
-    <div for="select" class="panel-wrapper">
-      <select id="select" class="panel">
+    <div class="panel-wrapper">
+      <select id="activity-select">
         <option value='one'>One</option>
         <option value='two'>Two</option>
         <option value='three'>Three</option>
       </select>
-      <div class='panel-content'>
-        <div class='panel-title'>Title</div>
-        <div class='panel-description'>Description</div>
+      <div class='panel-content no-events'>
+        <div class='panel-text'>
+          <div class='panel-title' id="activity-title">Title</div>
+          <div class='panel-desc' id="activity-desc">Description</div>
+        </div>
+        <div class='panel-circle'></div>
       </div>
     </div>
+    <label for="vax-checkbox" class="panel-wrapper">
+      <div class='panel-content'>
+        <div class='panel-text'>
+          <div class='panel-title'>Vaccination certificate</div>
+          <div class='panel-desc' id="vax-text">No</div>
+        </div>
+        <div class='checkbox-wrapper'>
+          <input id="vax-checkbox" name="vax-checkbox" type="checkbox"/>
+          <div class="checkbox-thumb"></div>
+        </div>
+      </div>
+    </label>
   </div>
   <div class='output'>
 

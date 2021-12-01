@@ -24,13 +24,15 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   margin: 0;
-  margin-bottom: 20px;
   max-width: 25ch;
 }
 
 .input {
   width: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media (min-width: 800px) {
@@ -43,47 +45,117 @@ h1 {
 
 .panel-wrapper {
   box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-  background: white;
   border-radius: 10px;
   position: relative;
   display: flex;
-  height: 100px;
   z-index: 0;
   overflow: hidden;
 }
 
+.panel-wrapper:focus-within {
+  background: rgba(0,0,0,0.05);
+}
+
 select {
   -webkit-appearance: none;
+  appearance: none;
   border: 0;
   background: none;
   margin: 0;
   position: absolute;
-  opacity: 0;
+  color: transparent;
   width: 100%;
   height: 100%;
   z-index: 1;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
+}
+
+select:hover {
+  background: rgba(0,0,0,0.05);
 }
 
 .panel-content {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  background: white;
   height: 100%;
   width: 100%;
   z-index: 2;
-  pointer-events: none;
   padding: 15px;
+  display: flex;
+  cursor: pointer;
+}
+
+.panel-content:not(.no-events):hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.no-events {
+  pointer-events: none;
+}
+
+
+.panel-circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+}
+
+.panel-text {
+  flex: 1;
 }
 
 .panel-title {
   font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.panel-description {
+.panel-desc {
+  user-select: none;
+  -webkit-user-select: none;
   font-size: 14px;
   font-weight: normal;
   color: rgba(0,0,0,0.5);
+}
+
+.checkbox-wrapper {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  outline: none;
+  opacity: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.checkbox-thumb {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 999px;
+  flex: none;
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+input:checked + .checkbox-thumb{
+  left: 22px;
 }

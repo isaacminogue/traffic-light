@@ -1,8 +1,14 @@
-var select = document.querySelectorAll('select')[0];
-var title = document.querySelectorAll('.panel-title')[0];
-var desciption = document.querySelectorAll('.panel-description')[0];
+var activitySelect = document.querySelector('#activity-select');
+var activityTitle = document.querySelector('#activity-title');
+var activityDesc = document.querySelector('#activity-desc');
+var vaxText = document.querySelector('#vax-text');
+var vaxCheckbox = document.querySelector('#vax-checkbox');
 
-select.onchange = function() {
-    title.innerHTML = 'Title ' + this.value;
-    desciption.innerHTML = 'Description ' + this.value;
+activitySelect.onchange = function() {
+    activityTitle.innerHTML = 'Title ' + this.value;
+    activityDesc.innerHTML = 'Description ' + this.value;
+}
+
+vaxCheckbox.onchange = function() {
+    vaxCheckbox.checked ? vaxText.innerHTML = 'Yes' : vaxText.innerHTML = 'No'
 }
