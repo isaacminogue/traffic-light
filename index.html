@@ -13,6 +13,24 @@
   <body>
     <div class='input'>
       <h1>New Zealand COVID Protection Framework Rules</h1>
+      <div class="panel-wrapper">
+        <div class='panel-content panel-vertical'>
+          <div class='panel-text'>
+            <div class='panel-title'>Alert level</div>
+          </div>
+          <div class='radio-wrapper'>
+            <div class='radio-group'>
+              <label class="radio-label" for="group-radio-red">Red</label>
+              <label class="radio-label" for="group-radio-orange">Orange</label>
+              <label class="radio-label" for="group-radio-green">Green</label>
+            </div>
+            <input id="group-radio-red" name="group-alert" type="radio"/>
+            <input id="group-radio-orange" name="group-alert" type="radio"/>
+            <input id="group-radio-green" name="group-alert" type="radio"/>
+            <div class="radio-thumb radio-three"></div>
+          </div>
+        </div>
+      </div>
     <div class="panel-wrapper">
       <select id="activity-select">
         <option value='one'>One</option>
@@ -39,6 +57,26 @@
         </div>
       </div>
     </label>
+    <div class="panel-wrapper">
+      <div class='panel-content panel-vertical'>
+        <div class='panel-text'>
+          <div class='panel-title'>Group size</div>
+        </div>
+        <div class='radio-wrapper'>
+          <div class='radio-group'>
+            <label class="radio-label" for="group-radio-1">1-25</label>
+            <label class="radio-label" for="group-radio-2">26-50</label>
+            <label class="radio-label" for="group-radio-3">50-100</label>
+            <label class="radio-label" for="group-radio-4">100+</label>
+          </div>
+          <input id="group-radio-1" name="group-size" type="radio" />
+          <input id="group-radio-2" name="group-size" type="radio"/>
+          <input id="group-radio-3" name="group-size" type="radio"/>
+          <input id="group-radio-4" name="group-size" type="radio" />
+          <div class="radio-thumb radio-four"></div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class='output'>
 

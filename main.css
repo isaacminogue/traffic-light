@@ -52,7 +52,8 @@ h1 {
   overflow: hidden;
 }
 
-.panel-wrapper:focus-within {
+.panel-wrapper:focus-within,
+.panel-wrapper:hover {
   background: rgba(0,0,0,0.05);
 }
 
@@ -72,10 +73,6 @@ select {
   cursor: pointer;
 }
 
-select:hover {
-  background: rgba(0,0,0,0.05);
-}
-
 .panel-content {
   position: relative;
   top: 0;
@@ -88,8 +85,9 @@ select:hover {
   cursor: pointer;
 }
 
-.panel-content:not(.no-events):hover {
-  background: rgba(0,0,0,0.05);
+.panel-vertical {
+  flex-direction: column;
+  gap: 10px;
 }
 
 .no-events {
@@ -136,11 +134,13 @@ select:hover {
   background: rgba(0,0,0,0.05);
   border-radius: 999px;
   position: relative;
+  overflow: hidden;
 }
 
 input[type="checkbox"] {
   outline: none;
   opacity: 0;
+  position: absolute;
   appearance: none;
   -webkit-appearance: none;
 }
@@ -154,8 +154,85 @@ input[type="checkbox"] {
   flex: none;
   left: 2px;
   transition: left 0.3s ease;
+  box-shadow: 0 2px 8px 0px rgba(0,0,0,0.1);
+}
+
+.radio-wrapper {
+  flex: 1;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+  position: relative;
+  padding: 0 2px;
+  overflow: hidden;
 }
 
 input:checked + .checkbox-thumb{
   left: 22px;
+}
+
+input[type="radio"] {
+  outline: none;
+  border: 1px solid blue;
+  width: calc((100% - 2px)/4);
+  height: 40px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-thumb {
+  position: absolute;
+  height: 36px;
+  background: white;
+  border-radius: 999px;
+  flex: none;
+  left: 2px;
+  transition: left 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 2px 8px 0px rgba(0,0,0,0.1);
+}
+
+.radio-four {
+  width: calc((100% - 2px)/4);
+}
+
+input:nth-of-type(2):checked ~ .radio-four{
+  left: calc((100% - 2px)/4);
+}
+input:nth-of-type(3):checked ~ .radio-four{
+  left: calc((100% - 2px)/4*2);
+}
+input:nth-of-type(4):checked ~ .radio-four{
+  left: calc((100% - 2px)/4*3);
+}
+
+.radio-three {
+  width: calc((100% - 2px)/3);
+}
+input:nth-of-type(2):checked ~ .radio-three{
+  left: calc((100% - 2px)/3);
+}
+input:nth-of-type(3):checked ~ .radio-three{
+  left: calc((100% - 2px)/3*2);
+}
+
+.radio-group {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+}
+
+.radio-label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
