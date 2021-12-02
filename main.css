@@ -33,6 +33,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 320px;
 }
 
 @media (min-width: 800px) {
@@ -296,17 +297,17 @@ svg {
 .alert-icon {
   background: black;
   border-radius: 10px 10px 0 0;
-  padding: 12px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
   align-self: flex-end;
   margin-right: 15px;
 }
 
 .alert-dot {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 999px;
 }
 

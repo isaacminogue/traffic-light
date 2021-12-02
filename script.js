@@ -7,10 +7,26 @@ var vaxPanel = document.querySelector('#vax-panel');
 var dotRed = document.querySelector('.alert-dot-red');
 var dotOrange = document.querySelector('.alert-dot-orange');
 var dotGreen = document.querySelector('.alert-dot-green');
+var radioRed = document.querySelector('#group-radio-red');
+var radioOrange = document.querySelector('#group-radio-orange');
+var radioGreen = document.querySelector('#group-radio-green');
+var vax = false;
+var alert = 'red';
+var activity = 'public';
+var size = 1;
 
 activitySelect.onchange = function() {
-    activityTitle.innerHTML = 'Title ' + this.value;
-    activityDesc.innerHTML = 'Description ' + this.value;
+    var value = this.value;
+    var options = this.children;
+    for(i = 0; i < options.length; i++) {
+        var option = options[i];
+        if (option.getAttribute('value') === value) {
+            activity = value;
+            activityTitle.innerHTML = option.innerHTML
+            activityDesc.innerHTML = option.getAttribute('data-desc');
+        }
+    }
+    refresh()
 }
 
 vaxCheckbox.onchange = function() {
@@ -18,29 +34,44 @@ vaxCheckbox.onchange = function() {
 }
 
 function vaxOn() {
+    vax = true
     vaxText.innerHTML = 'Yes';
     vaxPanel.classList.add('vax-on')
+    refresh()
 }
 
 function vaxOff() {
+    vax = false
     vaxText.innerHTML = 'No';
     vaxPanel.classList.remove('vax-on')
+    refresh()
 }
 
-function alertGreen() {
-    dotRed.classList.add('off');
-    dotOrange.classList.add('off');
-    dotGreen.classList.remove('off');
+radioGreen.onchange = function() {
+    alert = 'green';
+    dotRed.classList.add('alert-dot-off');
+    dotOrange.classList.add('alert-dot-off');
+    dotGreen.classList.remove('alert-dot-off');
+    refresh()
 }
 
-function alertOrange() {
-    dotRed.classList.add('off');
-    dotOrange.classList.remove('off');
-    dotGreen.classList.add('off');
+radioOrange.onchange = function()  {
+    alert = 'orange';
+    dotRed.classList.add('alert-dot-off');
+    dotOrange.classList.remove('alert-dot-off');
+    dotGreen.classList.add('alert-dot-off');
+    refresh()
 }
 
-function alertRed() {
-    dotRed.classList.remove('off');
-    dotOrange.classList.add('off');
-    dotGreen.classList.add('off');
+radioRed.onchange = function()  {
+    alert = 'red';
+    dotRed.classList.remove('alert-dot-off');
+    dotOrange.classList.add('alert-dot-off');
+    dotGreen.classList.add('alert-dot-off');
+    refresh()
+}
+
+// TODO make this update ouput panels
+function refresh() {
+    console.log('Alert is ' + alert + ' activity is ' + activity + ' vax is ' + vax + ', and size is ' + size,);
 }

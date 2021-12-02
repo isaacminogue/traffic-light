@@ -24,9 +24,9 @@
               <label class="radio-label" for="group-radio-orange">Orange</label>
               <label class="radio-label" for="group-radio-green">Green</label>
             </div>
-            <input id="group-radio-red" name="group-alert" type="radio"/>
-            <input id="group-radio-orange" name="group-alert" type="radio"/>
-            <input id="group-radio-green" name="group-alert" type="radio"/>
+            <input class='radio-alert' id="group-radio-red" name="group-alert" type="radio" checked/>
+            <input class='radio-alert' id="group-radio-orange" name="group-alert" type="radio"/>
+            <input class='radio-alert' id="group-radio-green" name="group-alert" type="radio"/>
             <div class="radio-thumb radio-three"></div>
           </div>
         </div>
@@ -38,14 +38,23 @@
       </div>
     <div class="panel-wrapper">
       <select id="activity-select">
-        <option value='one'>One</option>
-        <option value='two'>Two</option>
-        <option value='three'>Three</option>
+        <option value='public' data-desc="A pool, library, park or playground" selected>Public facilities</option>
+        <option value='retail' data-desc="For example, a shop or farmers market">Retail</option>
+        <option value='work' data-desc="For example, an office or factory">Workplaces</option>
+        <option value='education'data-desc="Early childhood centres, primary schools, secondary schools, and kura">Education</option>
+        <option value='tertiary' data-desc="Universities, polytechs and other higher education centres">Tertiary education</option>
+        <option value='hospo' data-desc="Bars, cafes and restaurants">Hospitality</option>
+        <option value='gather' data-desc="Social sports, places of worship, marae, weddings, civil unions, funerals and tangihanga">Gatherings</option>
+        <option value='home' data-desc="For example, a party or other social occasion">Gatherings at home</option>
+        <option value='event' data-desc="For example, a work function or awards ceremony">Indoor and outdoor events</option>
+        <option value='community' data-desc="For example, a public parade">Outdoor community events</option>
+        <option value='close' data-desc="For example, barbers, nail salons and tattoo parlours">Close-proximity businesses</option>
+        <option value='gym' data-desc="For example, indoor physical activity facilities">Gyms</option>
       </select>
       <div class='panel-content no-events'>
         <div class='panel-text'>
-          <div class='panel-title' id="activity-title">Title</div>
-          <div class='panel-desc' id="activity-desc">Description</div>
+          <div class='panel-title' id="activity-title">Public facilities</div>
+          <div class='panel-desc' id="activity-desc">A pool, library, park or playground</div>
         </div>
         <div class='panel-circle'>
           <svg width="12" height="7" viewBox="0 0 12 7">
