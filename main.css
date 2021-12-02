@@ -50,6 +50,7 @@ h1 {
   display: flex;
   z-index: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .panel-wrapper:focus-within,
@@ -71,6 +72,8 @@ select {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .panel-content {
@@ -82,18 +85,15 @@ select {
   z-index: 2;
   padding: 15px;
   display: flex;
-  cursor: pointer;
 }
 
 .panel-vertical {
   flex-direction: column;
-  gap: 10px;
 }
 
 .no-events {
   pointer-events: none;
 }
-
 
 .panel-circle {
   width: 40px;
@@ -155,6 +155,9 @@ input[type="checkbox"] {
   left: 2px;
   transition: left 0.3s ease;
   box-shadow: 0 2px 8px 0px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .radio-wrapper {
@@ -167,10 +170,33 @@ input[type="checkbox"] {
   position: relative;
   padding: 0 2px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 input:checked + .checkbox-thumb{
   left: 22px;
+}
+
+.vax-icon-on,
+.vax-icon-off {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+input + .checkbox-thumb .vax-icon-on {
+  opacity: 0;
+}
+
+input:checked + .checkbox-thumb .vax-icon-on {
+  opacity: 1;
+}
+
+input + .checkbox-thumb .vax-icon-off {
+  opacity: 1;
+}
+
+input:checked + .checkbox-thumb .vax-icon-off {
+  opacity: 0;
 }
 
 input[type="radio"] {
@@ -235,4 +261,67 @@ input:nth-of-type(3):checked ~ .radio-three{
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 14px;
+}
+
+svg {
+  fill: black;
+}
+
+.vax-card {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(43,0,255, 0.1);
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  min-height: 50px;
+  margin: 0 15px;
+}
+
+#vax-panel {
+  max-height: 70px;
+  transition: max-height 0.3s ease;
+}
+
+#vax-panel.vax-on {
+  max-height: 120px;
+}
+
+.vax-angle {
+  fill: #FFDD33;
+}
+
+.alert-icon {
+  background: black;
+  border-radius: 10px 10px 0 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: flex-end;
+  margin-right: 15px;
+}
+
+.alert-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+}
+
+.alert-dot-red {
+  background: #FF002B;
+}
+
+.alert-dot-orange {
+  background: #FFAA00;
+}
+
+.alert-dot-green {
+  background: #59A67F;
+}
+
+.alert-dot-off {
+  background: rgba(255,255,255,0.3);
 }

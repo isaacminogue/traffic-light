@@ -30,6 +30,11 @@
             <div class="radio-thumb radio-three"></div>
           </div>
         </div>
+        <div class='alert-icon'>
+          <div class='alert-dot alert-dot-red'></div>
+          <div class='alert-dot alert-dot-orange alert-dot-off'></div>
+          <div class='alert-dot alert-dot-green alert-dot-off'></div>
+        </div>
       </div>
     <div class="panel-wrapper">
       <select id="activity-select">
@@ -42,19 +47,50 @@
           <div class='panel-title' id="activity-title">Title</div>
           <div class='panel-desc' id="activity-desc">Description</div>
         </div>
-        <div class='panel-circle'></div>
+        <div class='panel-circle'>
+          <svg width="12" height="7" viewBox="0 0 12 7">
+            <path d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L6 4.58579L10.2929 0.292893C10.6834 -0.0976311 11.3166 -0.0976311 11.7071 0.292893C12.0976 0.683417 12.0976 1.31658 11.7071 1.70711L6.70711 6.70711C6.31658 7.09763 5.68342 7.09763 5.29289 6.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="black"/>
+          </svg>            
+        </div>
       </div>
     </div>
-    <label for="vax-checkbox" class="panel-wrapper">
+    <label id="vax-panel" for="vax-checkbox" class="panel-wrapper panel-vertical">
       <div class='panel-content'>
-        <div class='panel-text'>
-          <div class='panel-title'>Vaccination certificate</div>
-          <div class='panel-desc' id="vax-text">No</div>
-        </div>
-        <div class='checkbox-wrapper'>
-          <input id="vax-checkbox" name="vax-checkbox" type="checkbox"/>
-          <div class="checkbox-thumb"></div>
-        </div>
+            <div class='panel-text'>
+              <div class='panel-title'>Vaccination certificate</div>
+              <div class='panel-desc' id="vax-text">No</div>
+            </div>
+            <div class='checkbox-wrapper'>
+              <input id="vax-checkbox" name="vax-checkbox" type="checkbox"/>
+              <div class="checkbox-thumb">
+                <svg class='vax-icon-on' width="12" height="8" viewBox="0 0 12 8">
+                  <path d="M11.7071 0.292893C12.0976 0.683417 12.0976 1.31658 11.7071 1.70711L5.70711 7.70711C5.31658 8.09763 4.68342 8.09763 4.29289 7.70711L0.792893 4.20711C0.402369 3.81658 0.402369 3.18342 0.792893 2.79289C1.18342 2.40237 1.81658 2.40237 2.20711 2.79289L5 5.58579L10.2929 0.292893C10.6834 -0.0976311 11.3166 -0.0976311 11.7071 0.292893Z" fill="black"/>
+                </svg>
+                <svg class='vax-icon-off' width="10" height="10" viewBox="0 0 10 10">
+                  <path d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.20711 0.792893L5 3.58579L7.79289 0.792893C8.18342 0.402369 8.81658 0.402369 9.20711 0.792893C9.59763 1.18342 9.59763 1.81658 9.20711 2.20711L6.41421 5L9.20711 7.79289C9.59763 8.18342 9.59763 8.81658 9.20711 9.20711C8.81658 9.59763 8.18342 9.59763 7.79289 9.20711L5 6.41421L2.20711 9.20711C1.81658 9.59763 1.18342 9.59763 0.792893 9.20711C0.402369 8.81658 0.402369 8.18342 0.792893 7.79289L3.58579 5L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z" fill="black"/>
+                </svg>                        
+              </div>
+            </div>
+      </div>
+      <div class='vax-card'>
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg> 
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg> 
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg> 
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg> 
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg> 
+        <svg class='vax-angle' width="45" height="15" viewBox="0 0 45 15">
+          <path d="M20 0H45L25 15H0L20 0Z"/>
+        </svg>       
       </div>
     </label>
     <div class="panel-wrapper">
@@ -79,7 +115,7 @@
     </div>
   </div>
   <div class='output'>
-
+    
   </div>
   </body>
   <script src="script.js"></script>
