@@ -15,6 +15,12 @@ body {
   flex-direction: column;
 }
 
+@media (min-width: 800px) {
+  body {
+    flex-direction: row;
+  }
+}
+
 *, *:after, *:before {
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -29,7 +35,7 @@ h1 {
 
 .input {
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -40,7 +46,7 @@ h1 {
   .input {
     width: 400px;
     box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-    flex: 1;
+    padding: 20px;
   }
 }
 
@@ -162,7 +168,6 @@ input[type="checkbox"] {
 }
 
 .radio-wrapper {
-  flex: 1;
   height: 40px;
   display: flex;
   align-items: center;
@@ -325,4 +330,76 @@ svg {
 
 .alert-dot-off {
   background: rgba(255,255,255,0.3);
+}
+
+.output {
+  padding: 20px 20px 30px;
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.1);
+  flex: 1;
+  align-self: flex-start;
+}
+
+@media (min-width: 800px) {
+  .output {
+    padding: 20px;
+  }
+}
+
+.output-panel {
+  min-width: 300px;
+  min-height: 200px;
+  flex: 1;
+  display: flex;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.05);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 0 0 1px inset rgba(0,0,0,0.05);
+}
+
+.output-circle {
+  background: rgba(0,0,0,0.05);
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.output-desc {
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+}
+
+#scan svg {
+  margin: 1px 0 0 4px;
+}
+
+.output-status {
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  background: rgba(89,166,127,0.1);
+  box-shadow: 0 0 0 1px inset rgba(89,166,127,0.1);
+  color: rgb(89,166,127);
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.output-status .output-circle {
+  background: rgba(89,166,127,0.1);
+}
+
+.status-check {
+  fill: rgb(89,166,127);
 }
